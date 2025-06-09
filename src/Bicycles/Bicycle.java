@@ -29,5 +29,9 @@ public class Bicycle {
         this.brand = brand;
     }
     
+    @Override
+    public String toString(){
+        return "Id Bicicleta: " + id + " Estado: " + status + " Marca: " + brand;
+    }
     
 }
