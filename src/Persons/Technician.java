@@ -27,7 +27,7 @@ public class Technician extends Person {
 
     @Override
     public String toString() {
-      return "Technician: " + super.toString()+  "Technician Speciality: " + speciality;
+      return "Technician: " + super.toString()+  " Technician Speciality: " + speciality;
     }
     
     
