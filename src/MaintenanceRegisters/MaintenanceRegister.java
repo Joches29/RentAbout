@@ -14,6 +14,8 @@ public class MaintenanceRegister {
     private String description;
     private String technicianName;
     private int bicycleId;
+    public static final String fechaRegex = "^\\d{2}/\\d{2}/\\d{4}$";
+
 
     public String getFechaMantenimiento() {
         return fechaMantenimiento;
@@ -30,9 +32,15 @@ public class MaintenanceRegister {
     public int getBicycleId() {
         return bicycleId;
     }
+    
+     private boolean validateDateMaintenance(String fechaMantenimiento){
+        return fechaMantenimiento.matches(fechaRegex);
+    }
 
     public MaintenanceRegister(String fechaMantenimiento, String description, String technicianName, int bicycleId) {
-        this.fechaMantenimiento = fechaMantenimiento;
+        if (validateDateMaintenance(fechaMantenimiento)){
+            this.fechaMantenimiento = fechaMantenimiento;
+        }
         this.description = description;
         this.technicianName = technicianName;
         this.bicycleId = bicycleId;
