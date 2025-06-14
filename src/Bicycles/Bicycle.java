@@ -1,7 +1,7 @@
 package Bicycles;
 
 
-public class Bicycle {
+public abstract class Bicycle {
     
     private int id;
     private String brand;
@@ -22,16 +22,16 @@ public class Bicycle {
     public void setState(BicycleStatus status) {
             this.status = status;
     }
-    
-    public Bicycle (int id, String brand){
+
+    public Bicycle(int id, String brand, BicycleStatus status) {
         this.id = id;
-        this.status = BicycleStatus.AVAILABLE;
         this.brand = brand;
+        this.status = BicycleStatus.AVAILABLE;
     }
     
     @Override
     public String toString(){
-        return "Id Bicicleta: " + id + " Estado: " + status + " Marca: " + brand;
+        return "Id: " + id + " Estado: " + status + " Marca: " + brand;
     }
     
 }
