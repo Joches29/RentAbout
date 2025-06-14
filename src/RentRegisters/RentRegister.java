@@ -3,71 +3,62 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package RentRegisters;
-
+import java.time.LocalDateTime;
+import Bicycles.Bicycle;
+import Persons.User;
 /**
  *
  * @author rodol
  */
 public class RentRegister {
     
-    private String fechaInicio;
-    private int bicycleId;
-    private int userId;
-    private String fechaFinalizacion;
-    public static final String fechaRegex = "^\\d{2}/\\d{2}/\\d{4}$";
-
-    public String getFechaInicio() {
-        return fechaInicio;
+    private int id;
+    private Bicycle bike;
+    private User user;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    
+     public int getId() {
+        return id;
     }
 
-    public int getBicycleId() {
-        return bicycleId;
+    public Bicycle getBike() {
+        return bike;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public String getFechaFinalizacion() {
-        return fechaFinalizacion;
-    }
-
-    public void setFechaFinalizacion(String fechaFinalizacion) {
-        if (validateDateFinal(fechaFinalizacion)){
-            this.fechaFinalizacion = fechaFinalizacion;
-        }
+    public User getUser() {
+        return user;
     }
     
-    public void setFechaInicio(String fechaInicio) {
-         if (validateDateStart(fechaInicio)){
-             this.fechaInicio = fechaInicio;
-         }
-    }
-    
-    private boolean validateDateFinal(String fechaFinalizacion){
-        return fechaFinalizacion.matches(fechaRegex);
-    }
-    
-    private boolean validateDateStart(String fechaInicio){
-        return fechaInicio.matches(fechaRegex);
+    public LocalDateTime getStartDate() {
+        return startDate;
     }
 
-    
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
 
-    public RentRegister(String fechaInicio, int bicycleId, int userId, String fechaFinalizacion) {
-        this.fechaInicio = fechaInicio;
-        this.bicycleId = bicycleId;
-        this.userId = userId;
-         if (validateDateFinal(fechaFinalizacion)){
-            this.fechaFinalizacion = fechaFinalizacion;
-        }
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
+    }
+
+    public RentRegister(int id, Bicycle bike, User user, LocalDateTime startDate, LocalDateTime endDate) {
+        this.id = id;
+        this.bike = bike;
+        this.user = user;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     @Override
     public String toString() {
-        return "Fecha de Inicio del Alquiler: " + fechaInicio + "Bicycle Id: " + bicycleId + " User Id: " + userId + " Fecha de Finalizacion del Alquiler: " + fechaFinalizacion + '}';
+        return "RentRegister{" + "id=" + id + ", bike=" + bike + ", user=" + user + ", startDate=" + startDate + ", endDate=" + endDate + '}';
     }
-  
+
     
     
 }
