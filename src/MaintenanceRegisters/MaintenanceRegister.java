@@ -3,51 +3,62 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MaintenanceRegisters;
-
+import java.time.LocalDateTime;
+import Persons.Technician;
+import Bicycles.Bicycle;
 /**
  *
  * @author rodol
  */
 public class MaintenanceRegister {
     
-    private String fechaMantenimiento;
+    private LocalDateTime maintenanceDate;
     private String description;
-    private String technicianName;
-    private int bicycleId;
-    public static final String fechaRegex = "^\\d{2}/\\d{2}/\\d{4}$";
+    private Technician technician;
+    private Bicycle bicycle;
 
 
-    public String getFechaMantenimiento() {
-        return fechaMantenimiento;
+    public LocalDateTime getMaintenanceDate() {
+        return maintenanceDate;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getTechnicianName() {
-        return technicianName;
+    public Technician getTechnician() {
+        return technician;
     }
 
-    public int getBicycleId() {
-        return bicycleId;
-    }
-    
-     private boolean validateDateMaintenance(String fechaMantenimiento){
-        return fechaMantenimiento.matches(fechaRegex);
+    public Bicycle getBicycleId() {
+        return bicycle;
     }
 
-    public MaintenanceRegister(String fechaMantenimiento, String description, String technicianName, int bicycleId) {
-        if (validateDateMaintenance(fechaMantenimiento)){
-            this.fechaMantenimiento = fechaMantenimiento;
-        }
+    public void setMaintenanceDate(LocalDateTime maintenanceDate) {
+        this.maintenanceDate = maintenanceDate;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
-        this.technicianName = technicianName;
-        this.bicycleId = bicycleId;
+    }
+
+    public void setTechnician(Technician technician) {
+        this.technician = technician;
+    }
+
+    public void setBicycleId(Bicycle bicycle) {
+        this.bicycle = bicycle;
+    }    
+
+    public MaintenanceRegister(LocalDateTime maintenanceDate, String description, Technician technician, Bicycle bicycle) {
+        this.maintenanceDate = maintenanceDate;
+        this.description = description;
+        this.technician = technician;
+        this.bicycle = bicycle;
     }
 
     @Override
     public String toString() {
-        return "Fecha de Mantenimiento: " + fechaMantenimiento + " Descripcion del Mantinimiento: " + description +  " Nombre del Tecnico: " + technicianName + " Bicicleta Id: " + bicycleId ;
+        return "Maintenance Register: " + " Fecha: " + maintenanceDate + " Descripcion: " + description +  " Tecnico: " + technician + " Bicicleta: " + bicycle ;
     }
 }
