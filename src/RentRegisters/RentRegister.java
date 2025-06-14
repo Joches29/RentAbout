@@ -13,7 +13,7 @@ import Persons.User;
 public class RentRegister {
     
     private int id;
-    private Bicycle bike;
+    private Bicycle bicycle;
     private User user;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
@@ -22,8 +22,8 @@ public class RentRegister {
         return id;
     }
 
-    public Bicycle getBike() {
-        return bike;
+    public Bicycle getBicycle() {
+        return bicycle;
     }
 
     public User getUser() {
@@ -46,9 +46,17 @@ public class RentRegister {
         this.endDate = endDate;
     }
 
-    public RentRegister(int id, Bicycle bike, User user, LocalDateTime startDate, LocalDateTime endDate) {
+    public void setBicycle(Bicycle bicycle) {
+        this.bicycle = bicycle;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public RentRegister(int id, Bicycle bicycle, User user, LocalDateTime startDate, LocalDateTime endDate) {
         this.id = id;
-        this.bike = bike;
+        this.bicycle = bicycle;
         this.user = user;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -56,9 +64,6 @@ public class RentRegister {
 
     @Override
     public String toString() {
-        return "RentRegister{" + "id=" + id + ", bike=" + bike + ", user=" + user + ", startDate=" + startDate + ", endDate=" + endDate + '}';
+        return "RentRegister: " + " Id: " + id + " Bicycle: " + bicycle + " User: " + user + " Start Date: " + startDate + " End Date: " + endDate;
     }
-
-    
-    
 }
