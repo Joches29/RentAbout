@@ -9,24 +9,24 @@ package Bicycles;
  */
 public class GasBicycle extends Bicycle{
     
-    private String nivelCombustible;
+    private int nivelCombustible;
 
-    public String getNivelCombustible() {
+    public int getNivelCombustible() {
         return nivelCombustible;
     }
 
-    public void setNivelCombustible(String nivelCombustible) {
+    public void setNivelCombustible(int nivelCombustible) {
         this.nivelCombustible = nivelCombustible;
     }
 
-    public GasBicycle(String nivelCombustible, int id, String brand, BicycleStatus status) {
-        super(id, brand, status);
-        this.nivelCombustible = nivelCombustible;
+    public GasBicycle( int id,  String brand) {
+        super(id, brand);
+        this.nivelCombustible = 100;
     }
 
     @Override
     public String toString() {
-        return "Gas Bicycle: " + super.toString() + " Nivel Combustible: " + nivelCombustible;
+        return "Gas Bicycle: " + super.toString() + " Nivel Combustible: " + nivelCombustible + "%";
     }
     
     

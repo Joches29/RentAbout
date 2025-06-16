@@ -10,24 +10,24 @@ package Bicycles;
  */
 public class ElectricBicycle extends Bicycle{
     
-    private String nivelBateria;
+    private int nivelBateria;
 
-    public String getNivelBateria() {
+    public int getNivelBateria() {
         return nivelBateria;
     }
     
-    public void setNivelBateria(String nivelBateria) {
+    public void setNivelBateria(int nivelBateria) {
         this.nivelBateria = nivelBateria;
     }
 
-    public ElectricBicycle(String nivelBateria, int id, String brand, BicycleStatus status) {
-        super(id, brand, status);
-        this.nivelBateria = nivelBateria;
+    public ElectricBicycle(int id, String brand) {
+        super(id, brand);
+        this.nivelBateria = 100;
     }
 
     @Override
     public String toString() {
-        return "Electric Bicycle: " + super.toString() +  " Nivel Bateria: " + nivelBateria;
+        return "Electric Bicycle: " + super.toString() +  " Nivel Bateria: " + nivelBateria + "%";
     }
     
     
