@@ -1,4 +1,4 @@
-/* 
+/* private
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -11,6 +11,11 @@ import RentAbouts.Lists;
  */
 public class BicycleList implements Lists<Bicycle>{
     private Bicycle list[];
+
+    public BicycleList() {
+        this.list = new Bicycle[100];
+    }
+    
 
     @Override
     public boolean add(Bicycle t) {
@@ -56,7 +61,7 @@ public class BicycleList implements Lists<Bicycle>{
         int idt = Integer.parseInt(id.toString());
         int max = list.length;
         for (int i = 0; i < max; i++) {
-            if(list[i].getId()==idt){
+            if(list[i]!=null && list[i].getId()==idt){
                 return list[i];
             }
         }
