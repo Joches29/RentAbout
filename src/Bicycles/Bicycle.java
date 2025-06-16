@@ -1,7 +1,7 @@
 package Bicycles;
 
 
-public abstract class Bicycle {
+public class Bicycle {
     
     private int id;
     private String brand;
