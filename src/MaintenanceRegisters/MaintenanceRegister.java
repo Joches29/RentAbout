@@ -12,12 +12,17 @@ import Bicycles.Bicycle;
  */
 public class MaintenanceRegister {
     
+    private int id;
     private LocalDateTime maintenanceDate;
     private String description;
     private Technician technician;
     private Bicycle bicycle;
 
 
+    public int getId(){
+        return id;
+    }
+    
     public LocalDateTime getMaintenanceDate() {
         return maintenanceDate;
     }
@@ -50,7 +55,8 @@ public class MaintenanceRegister {
         this.bicycle = bicycle;
     }    
 
-    public MaintenanceRegister(LocalDateTime maintenanceDate, String description, Technician technician, Bicycle bicycle) {
+    public MaintenanceRegister(int id, LocalDateTime maintenanceDate, String description, Technician technician, Bicycle bicycle) {
+        this.id = id;
         this.maintenanceDate = maintenanceDate;
         this.description = description;
         this.technician = technician;
@@ -59,6 +65,6 @@ public class MaintenanceRegister {
 
     @Override
     public String toString() {
-        return "Maintenance Register: " + " Fecha: " + maintenanceDate + " Descripcion: " + description +  " Tecnico: " + technician + " Bicicleta: " + bicycle ;
+        return "Maintenance Register: " + "Id: " + id + " Fecha: " + maintenanceDate + " Descripcion: " + description +  " Tecnico: " + technician + " Bicicleta: " + bicycle;
     }
 }
